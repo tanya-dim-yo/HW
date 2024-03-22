@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задача: simpleFormControls.html</title>
+    <style type="text/css">
+        .fieldset { 
+            width: 400px; 
+        } 
+    </style>
 </head>
 <body>
     <h1>Регистрация</h1>
     <form id="registration" action="/cgi-bin/registration.py" method="GET">
-        <fieldset>
+        <fieldset class="fieldset">
             <legend>Лични данни</legend>
                 <label for="userName">Име:</label>
                 <input type="text" id="userName" name="userName" placeholder="малко име, на латиница" autocomplete="on" autofocus required maxlength="50"><br>
