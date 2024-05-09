@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW2: Comparison Operators & Conditional Statement</title>
+    <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+    <h3>HW2: Comparison Operators & Conditional Statement</h3>
+    
+    <form class="test">
+        <div class="form-row">
+            <label for="uname">Вашето име:</label>
+            <input type="text" name="uname" id="uname">
+        </div>
+        <div class="form-row">
+            <label for="uage">Вашата възраст:</label>
+            <input type="date" name="uBirth" id="uBirth">
+        </div>
+        <button type="button" onclick=checkUserAge();>Вход</button>
+    </form>
+    <div id="output"></div>
+
+    <script>
+        function checkUserAge() {
+            var inputsValues = getInputsValues();
+            var userBirthYear = inputsValues.uBirth.year;
+            var userName = inputsValues.uname;
+
+            console.log(userBirthYear);
+            console.log(typeof userBirthYear);
+            console.log(userName);
+
+            let userAge = 2024 - userBirthYear;
+            let x = 18 - userAge;
+            let result;
+            
+            if (!userName)
+            {
+                result = "Моля, въведете валидно име!";
+            }
+            else if (isNaN(userAge))
+            {
+                result = "Моля, въведете вашата рождена дата!";
+            }
+            else if (userAge >= 18)
+            {
+                result = `Добре дошли, ${userName}!`;
+            }
+            else if (userAge >= 12 && userAge < 18)
+            {      
+                result = `${userName}, ще имате достъп само до определена функционалност от този сайт.`;
+            }
+            else
+            {
+                result = `Съжaлявам ${userName}, отбий се тук след ${x} години!`;
+            }
+
+            writeToOutput(result);
+        }
+
+        // ****************************************
+        // DO NOT CHANGE
+        // допълнителни DOM функции:
+        function getInputsValues() {
+            var form = document.getElementsByClassName("test")[0];
+            var inputs = form.getElementsByTagName("input");
+            var inputsValues = {};
+
+            for (var i = 0, len = inputs.length; i < len; i++) {
+                var inputNode = inputs[i];
+                var inputNodeValue = inputNode.value;
+
+                if (inputNode.type === "date") {
+                    var dateMatch = inputNodeValue.match(/^(\d{4})-(\d{2})-(\d{2})$/); //YYYY-MM-DD
+                    if (dateMatch) {
+                        inputNodeValue = {
+                            year: dateMatch[1],
+                            month: dateMatch[2],
+                            day: dateMatch[3]
+                        };
+                    }
+                } else {
+                    inputNodeValue = inputNode.value;
+                }
+                inputsValues[inputNode.id] = inputNodeValue;
+            }
+
+            return inputsValues;
+        }
+
+        function writeToOutput(result) {
+            var outputNode = document.getElementById("output");
+            outputNode.innerHTML = result;
+        }
+    </script>
+</body>
+</html>
