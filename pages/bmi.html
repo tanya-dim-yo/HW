@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача: изчисляване на индекс на телесна маса</title>
+</head>
+<body>
+    <label for="weightInput">Въведете тегло в килограми:</label>
+    <input type="number" id="weightInput">
+    <br>
+    <label for="heightInput">Въведете височина в метри:</label>
+    <input type="number" id="heightInput">
+    <br>
+    <button onclick="calculateBMI()">Изчисли</button>
+
+    <p id="bmiResult"></p>
+
+    <script>
+        function calculateBMI() {
+            let weight = parseFloat(document.getElementById("weightInput").value);
+            let height = parseFloat(document.getElementById("heightInput").value);
+
+            let resultElement = document.getElementById("bmiResult");
+
+            if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+                resultElement.textContent = "Невалидни тегло или височина!";
+            } else {
+                let bmi = weight / (height * height);
+                resultElement.textContent = "Вашият индекс на телесна маса е: " + bmi.toFixed(2);
+            }
+        }
+    </script>
+</body>
+</html>
