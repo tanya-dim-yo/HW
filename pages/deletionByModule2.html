@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача: деление по модул (пример 2)</title>
+</head>
+<body>
+    <p id="fruits"></p>
+    <p id="result"></p>
+
+    <script>
+        let fruits = ['apple', 'banana', 'orange', 'grape', 'kiwi', 'peach', 'strawberry', 'melon', 'watermelon'];
+        let newFruits = [];
+
+        for (let i = 0; i < fruits.length; i++) {
+            if (i % 2 !== 0) {
+                newFruits.push(fruits[i]);
+            }
+        }
+
+        let fruitsContainer = document.getElementById("fruits");
+        let newFruitsContainer = document.getElementById("result");
+
+        fruitsContainer.textContent = "Плодове: " + fruits.join(", ");
+        newFruitsContainer.textContent = "Плодовете на нечетни позиции в масива са: " + newFruits.join(", ");
+    </script>
+</body>
+</html>

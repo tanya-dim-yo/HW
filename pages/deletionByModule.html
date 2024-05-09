@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача: деление по модул (пример 1)</title>
+</head>
+<body>
+    <h3>Задача: деление по модул (пример 1)</h3>
+
+    <p id="result"></p>
+
+    <script>
+        const today = new Date();
+        const currentMonth = today.getMonth();
+        const monthNames = [
+            "януари", "февруари", "март", "април", "май", "юни",
+            "юли", "август", "септември", "октомври", "ноември", "декември"
+        ];
+    
+        const monthName = monthNames[currentMonth];
+    
+        const daysInMonth = new Date(today.getFullYear(), currentMonth + 1, 0).getDate();
+    
+        let result = `Четни дати в текущия месец ${monthName} са: <br>`;
+
+        for (let i = 1; i <= daysInMonth; i++)
+        {
+            if (i % 2 === 0)
+            {
+                result += i + "<br>";
+            }
+        }
+    
+        document.getElementById("result").innerHTML = result;
+    </script>
+</body>
+</html>

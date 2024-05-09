@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task2: Comparison Operators & Conditional Statement</title>
+</head>
+<body>
+    <h3>Task2: Comparison Operators & Conditional Statement</h3>
+    
+    <label for="town">От къде сте?</label>
+    <select id="town" name="town">	
+        <option value="София">София</option>
+        <option value="Париж">Париж</option>
+        <option value="Лондон">Лондон</option>
+    </select>
+    <button onclick="greetings();">ОК</button>
+    
+    <p id="mainResult">Поздравът в този град е: <span id="result"></span></p>
+
+    <script>
+        function greetings() {
+
+            var userTown = document.getElementById("town").value;
+            var greetingResult = document.getElementById("result");
+
+            if (userTown === 'София')
+            {
+                greetingResult.innerText = "Здравей!";
+            }
+            else if (userTown === 'Париж')
+            {
+                greetingResult.innerText = "Salut!";
+            }
+            else
+            {
+                greetingResult.innerText = "Hi!";
+            }
+        }
+    </script>
+</body>
+</html>
