@@ -15,20 +15,54 @@
     <button onclick="calculateBMI()">Изчисли</button>
 
     <p id="bmiResult"></p>
+    <p id="bmiCondition"></p>
 
     <script>
         function calculateBMI() {
             let weight = parseFloat(document.getElementById("weightInput").value);
             let height = parseFloat(document.getElementById("heightInput").value);
 
-            let resultElement = document.getElementById("bmiResult");
+            let result = document.getElementById("bmiResult");
+            let condition = document.getElementById("bmiCondition");
+            let bmi;
 
             if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
-                resultElement.textContent = "Невалидни тегло или височина!";
+                result.textContent = "Невалидни тегло или височина!";
             } else {
-                let bmi = weight / (height * height);
-                resultElement.textContent = "Вашият индекс на телесна маса е: " + bmi.toFixed(2);
+                bmi = weight / (height * height);
+                result.textContent = "Вашият индекс на телесна маса е: " + bmi.toFixed(2);
             }
+
+            switch (true)
+            {
+                case bmi < 16.0:
+                    condition.textContent = "Състояние: тежко недохранване";
+                    break;
+                case bmi >= 16.0 && bmi <= 16.99:
+                    condition.textContent = "Състояние: средно недохранване";
+                    break;
+                case bmi >= 17.0 && bmi <= 18.49:
+                    condition.textContent = "Състояние: леко недохранване";
+                    break;
+                case bmi >= 18.5 && bmi <= 24.99:
+                    condition.textContent = "Състояние: нормално тегло";
+                    break;
+                case bmi > 25.0 && bmi <= 29.99:
+                    condition.textContent = "Състояние: предзатлъстяване";
+                    break;
+                case bmi > 30.0 && bmi <= 34.99:
+                    condition.textContent = "Състояние: затлъстяване I степен";
+                    break;
+                case bmi >= 35.0 && bmi <= 39.99:
+                    condition.textContent = "Състояние: затлъстяване II степен";
+                    break;
+                case bmi >= 40.0:
+                    condition.textContent = "Състояние: затлъстяване III степен	";
+                    break;
+                default:
+                    condition.textContent = "Друго състояние.";
+                    break;
+            }   
         }
     </script>
 </body>
