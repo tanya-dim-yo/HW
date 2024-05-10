@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW: loops</title>
+</head>
+<body>
+    <h3>HW: loops</h3>
+    <h4>Сумата на четните числа, които се делят на 3, в интервала [1 - 20] включително, е: <span id="result"></span></h2>
+   
+    <script>
+        let result = document.getElementById("result");
+        let sum = 0;
+
+        for (let i = 1; i <= 20; i++)
+        {
+            if (i % 2 === 0 && i % 3 === 0)
+            {
+                sum += i;
+            }
+        }
+
+        result.textContent = sum;
+    </script>
+</body>
+</html>
