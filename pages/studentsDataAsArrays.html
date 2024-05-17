@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW: studentsDataAsArrays</title>
+</head>
+<body>
+    <h3>HW: studentsDataAsArrays</h3>
+    <p>Студент 1: <span id="studentOne"></span></p>
+    <p>Студент 2: <span id="studentTwo"></span></p>
+    <p>Студент 3: <span id="studentThree"></span></p>
+    <p>Студент 4: <span id="studentFour"></span></p>
+    <p>Най-възрастният студент е: <span id="oldestStudentNameResult"></span> на <span id="oldestStudentAgeResult"></span> год.</p>
+
+    <script>
+        let students = [
+            ["male",24,"Ivan","Ivanov"],
+            ["female",22,"Maria","Petrova"],
+            ["male",18,"Georgi","Georgiev"],
+            ["male",21,"Nikolai","Nikolov"]
+        ];
+
+        studentOne.textContent = students[0];
+        studentTwo.textContent = students[1];
+        studentThree.textContent = students[2];
+        studentFour.textContent = students[3];
+
+        let oldestStudentName = students[0][2];
+        let oldestStudentAge = students[0][1];
+
+        for (var i = 0; i < students.length; i++)
+        {
+            const studentAge = students[i][1];
+
+            if (oldestStudentAge < studentAge)
+            {
+                oldestStudentAge = studentAge;
+                oldestStudentName = students[i][2];
+            }
+        }
+
+        oldestStudentNameResult.textContent = oldestStudentName;
+        oldestStudentAgeResult.textContent = oldestStudentAge;
+    </script>
+</body>
+</html>
