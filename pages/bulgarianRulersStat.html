@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW: Bulgarian Rulers Stat</title>
+</head>
+<body>
+    <h3>HW: Bulgarian Rulers Stat</h3>
+    <p>Владетелите, управлявали повече от 15 години са:</p>
+    <p id="result"></p>
+
+    <script>
+        var rulers = [
+	        ["асПАРуХ",681, 700 ],
+	        ["тЕРвеЛ", 700,718 ],
+	        ["СеВаР", 738,753],
+	        ["телЕРИГ", 766,777],
+	        ["каРДАм", 777, 803],
+	        ["крум", 803,814 ],
+	        ["ОмурТАг",814,831],
+        ];
+
+        let selectedRulers = '';
+
+        for (var i = 0; i < rulers.length; i++)
+        {
+            const yearsOfRuling = rulers[i][2] - rulers[i][1];
+
+            if (yearsOfRuling > 15)
+            {
+                let rulerName = toCamelCaseCyr(rulers[i][0]);
+                selectedRulers += `${rulerName} е управлявал ${yearsOfRuling} години.<br>`;
+            }
+        }
+
+        document.getElementById('result').innerHTML = selectedRulers;
+
+        function toCamelCaseCyr(str) {
+	        return str.toLowerCase()
+			    .replace(/(?:\b|^|[^а-яА-Я])([а-яА-Я])/g, (all, chr) => chr.toUpperCase());
+        }
+    </script>
+</body>
+</html>
