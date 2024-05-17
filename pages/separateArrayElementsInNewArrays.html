@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW: separateArrayElementsInNewArrays</title>
+</head>
+<body>
+    <h3>HW: separateArrayElementsInNewArrays</h3>
+    <h4>Първоначалният масив е: <span id="initialArray"></span></h2>
+    <h4>Положителните четни стойности са: <span id="positiveEvenArray"></span></h2>
+    <h4>Отрицателните нечетни стойности са: <span id="negativeOddArray"></span></h2>
+
+    <script>
+        const numbersArr = [1, 6, -3, 5, 2, -8, 0, 4, 3];
+        initialArray.textContent = numbersArr;
+
+        let evenNums = [];
+        let oddNums = [];
+
+        for (var i = 0; i < numbersArr.length; i++)
+        {
+            if (numbersArr[i] > 0 && numbersArr[i] % 2 === 0)
+            {
+                evenNums.push(numbersArr[i]);
+            }
+            else if (numbersArr[i] < 0 && numbersArr[i] % 2 != 0)
+            {
+                oddNums.push(numbersArr[i]);
+            }
+        }
+
+        positiveEvenArray.textContent = evenNums;
+        negativeOddArray.textContent = oddNums;
+    </script>
+</body>
+</html>
