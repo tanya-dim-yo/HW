@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW: sumArrayElements</title>
+</head>
+<body>
+    <h3>HW: sumArrayElements</h3>
+    <h4>Сумата на всички положителни и четни числа в масива, е: <span id="result"></span></h2>
+   
+    <script>
+        let numbers = [-2, 3, 7, 8, -1, 4, 2];
+        console.log(numbers);
+
+        let result = document.getElementById("result");
+        let sum = 0;
+
+        for (var i = 0; i < numbers.length; i++)
+        {
+            if (numbers[i] > 0 && numbers[i] % 2 === 0)
+            {
+                sum += i;
+            }
+        }
+
+        result.textContent = sum;
+    </script>
+</body>
+</html>
