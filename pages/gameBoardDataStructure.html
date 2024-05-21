@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW: gameBoardDataStructure - Demo and Task</title>
+</head>
+<body>
+    <h3>HW: gameBoardDataStructure - Demo and Task</h3>
+    <p>Първоначалният масив е:</p>
+    <p>|0|0|0|</br>
+    |0|0|0|</br>
+    |0|x|0|</p>
+
+    <p>Отбелязваме х на първи ред, втора позиция:</p>
+    <p id="result"></p>
+    <script>
+        function showConsoleBoard(board){	
+	        let boardStr = "";
+
+	        for (let i = 0; i < board.length; i++) {
+		        boardStr += "|";		
+
+		        for (let j = 0; j < board[i].length; j++) {
+			        boardStr += board[i][j] + "|";
+		        }
+		        boardStr += "\n";
+            }
+	        return boardStr;
+        }
+
+        function setX(x,y){
+            board2d[x][y] = 'x';
+        }
+
+        let board2d = [
+	        [ 0,  0 , 0 ],
+	        [ 0,  0 , 0 ],
+	        [ 0, 'x', 0 ]
+        ];
+
+        setX(0, 1);
+        const boardStr = showConsoleBoard(board2d);
+        document.getElementById('result').innerText = boardStr;
+    </script>
+</body>
+</html>
