@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW: getHigherScoreIndex</title>
+</head>
+<body>
+    <h3>HW: getHigherScoreIndex</h3>
+    <p>Students: ["Ivan", "Pesho", "Maria"]</p>
+    <p>Scores: [5, 4, 6]</p>
+    <p><span id="name"></span> has the higest score: <span id="highestScore"></span></p>
+
+    <script>
+        function getHighestScoreIndex(arr) {
+            let maxScore = Math.max(...arr);
+            return arr.indexOf(maxScore);
+        }
+
+        let students = ["Ivan", "Pesho", "Maria"];
+        let scores = [5, 4, 6];
+        let highestScoreIndex = getHighestScoreIndex(scores);
+
+        document.getElementById('name').innerText = students[highestScoreIndex];
+        document.getElementById('highestScore').innerText = Math.max(...scores);
+    </script>
+</body>
+</html>
