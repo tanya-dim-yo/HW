@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW: findMaxEven() Task</title>
+</head>
+<body>
+    <h3>HW: findMaxEven() Task</h3>
+    <p>Първоначалният масив е: [2, -4, 5, 3, 9, 0, 1]</p>
+    <p>Най-голямото четно число е: <span id="result"></span></p>
+
+    <script>
+        function findMaxEven(arr) {
+            let biggestEvenNumber = Number.MIN_SAFE_INTEGER;
+
+            for (let i = 0; i < arr.length; i++) {
+                let currentNumber = arr[i];
+
+                if (currentNumber % 2 === 0 && currentNumber > biggestEvenNumber)
+                {
+                    biggestEvenNumber = currentNumber;
+                }
+            }
+
+            return biggestEvenNumber;
+        }
+
+        let initialArr = [2, -4, 5, 3, 9, 0, 1];
+        let maxEvenNumber = findMaxEven(initialArr);
+
+        document.getElementById('result').innerText = maxEvenNumber;
+    </script>
+</body>
+</html>
