@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW: SumEven2DimArrayElements</title>
+</head>
+<body>
+    <h3>HW: SumEven2DimArrayElements</h3>
+    <p>Първоначалният масив е: [[1,2,3],[4,5,6]]</p>
+    <p>Сумата на четните числа е: <span id="result"></span></p>
+
+    <script>
+        function SumEven2DimArrayElements(arr)
+        {
+            let sum = 0;
+
+            for (let i = 0; i < arr.length; i++)
+            {
+                for (let j = 0; j < arr[i].length; j++)
+                {
+                    let currentNumber = arr[i][j];
+
+                    if (currentNumber % 2 === 0)
+                    {
+                        sum += currentNumber;
+                    }
+                }
+            }
+
+            return sum;
+        }
+
+        let arr = [
+	        [1,2,3],
+	        [4,5,6]
+        ];
+
+        document.getElementById('result').innerText = SumEven2DimArrayElements(arr);
+    </script>
+</body>
+</html>
